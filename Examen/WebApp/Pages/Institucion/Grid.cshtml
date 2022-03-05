@@ -9,6 +9,9 @@
             <div class="col-lg-6 col-md-8 mx-auto">
                 <h1 class="fw-light">Institución</h1>
                 <p class="lead text-muted">Mantenimiento que permite realizar acciones de consulta, creación, actualización y eliminación de instituciones</p>
+                <p>
+                    <a class="btn btn-primary my-2" asp-page="/Institucion/Edit">Nueva Institución</a>
+                </p>
             </div>
         </div>
         <div class="row py-lg-2">
@@ -36,14 +39,14 @@
                                             <td>@item.Codigo</td>
                                             <td>@item.Nombre</td>
                                             <td>@item.Telefono</td>
-                                            <td>@item.Estado</td>
+                                            <td>@Html.Raw(item.Estado ? "Activo" : "Inactivo")</td>
                                             <td>
-                                                <button type="button" class="btn btn-danger" onclick="GridProveedor.OnClickEliminar(@item.Id_Institucion)">
-                                                    <i class='bx bx-trash'></i>
+                                                <button type="button" class="btn btn-info" onclick="GridInstitucion.OnClickEditar(@item.Id_Institucion)">
+                                                    <i class='bx bx-edit'></i>
                                                 </button>
                                             </td>
                                             <td>
-                                                <button type="button" class="btn btn-danger" onclick="GridProveedor.OnClickEliminar(@item.Id_Institucion)">
+                                                <button type="button" class="btn btn-danger" onclick="GridInstitucion.OnClickEliminar(@item.Id_Institucion)">
                                                     <i class='bx bx-trash'></i>
                                                 </button>
                                             </td>

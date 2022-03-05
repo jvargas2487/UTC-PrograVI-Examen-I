@@ -58,10 +58,10 @@ namespace WBL
             {
                 return await _sql.ExecuteAsync("InstitucionInsertar", new
                 {
-                    entity.Id_Institucion,
+                    entity.Codigo,
                     entity.Nombre,
                     entity.Telefono,
-                    entity.Estado
+                    Estado = true
                 });
             }
             catch (Exception)
@@ -75,7 +75,14 @@ namespace WBL
         {
             try
             {
-                return await _sql.ExecuteAsync("InstitucionActualizar", entity);
+                return await _sql.ExecuteAsync("InstitucionActualizar", new
+                {
+                    entity.Id_Institucion,
+                    entity.Codigo,
+                    entity.Nombre,
+                    entity.Telefono,
+                    entity.Estado
+                });
             }
             catch (Exception)
             {

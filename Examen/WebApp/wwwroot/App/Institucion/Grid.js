@@ -3,7 +3,10 @@ var GridInstitucion;
 (function (GridInstitucion) {
     //Muestra modal mensaje
     if (MensajeApp != "") {
-        Toast.fire({ icon: "success", title: MensajeApp });
+        Swal.fire({
+            icon: 'success',
+            title: MensajeApp
+        });
     }
     //Muestra modal confirmacion
     function OnClickEliminar(id) {
@@ -15,6 +18,10 @@ var GridInstitucion;
         });
     }
     GridInstitucion.OnClickEliminar = OnClickEliminar;
+    function OnClickEditar(id) {
+        window.location.href = "Institucion/Edit?&id=" + id;
+    }
+    GridInstitucion.OnClickEditar = OnClickEditar;
     //Datatable
     $("#GridView").DataTable();
 })(GridInstitucion || (GridInstitucion = {}));

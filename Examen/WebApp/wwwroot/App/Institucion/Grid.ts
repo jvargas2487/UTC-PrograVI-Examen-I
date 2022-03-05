@@ -4,7 +4,10 @@
 
     //Muestra modal mensaje
     if (MensajeApp != "") {
-        Toast.fire({ icon: "success", title: MensajeApp });
+        Swal.fire({
+            icon: 'success',
+            title: MensajeApp
+        });
     }
 
     //Muestra modal confirmacion
@@ -16,6 +19,11 @@
                 }
             });
     }
+
+    export function OnClickEditar(id) {
+        window.location.href = "Institucion/Edit?&id=" + id;
+    }
+
 
     //Datatable
     $("#GridView").DataTable();
